@@ -2,8 +2,7 @@ import React from "react";
 import Rating from "@material-ui/lab/Rating";
 import Box from "@material-ui/core/Box";
 import "./home.css";
-import { withStyles } from "@material-ui/core/styles";
-import { colors } from "@material-ui/core";
+import moment from "moment";
 
 const Home_card = ({ review }) => {
   console.log(review.stars);
@@ -20,6 +19,7 @@ const Home_card = ({ review }) => {
 
         <img className="card_image" src={review.selectedFile} />
         <div className="card_user_details">
+          <p className="time">{moment(review.createdAt).fromNow()}</p>
           <Box
             className="rating_box"
             component="fieldset"

@@ -7,6 +7,10 @@
   justify-content: center;
   background-color: #30336b;
   height: 60px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
 }
 .header__list {
   width: 100%;
