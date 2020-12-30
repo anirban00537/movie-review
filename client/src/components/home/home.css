@@ -10,6 +10,14 @@
   flex: 0.6;
   align-items: center;
 }
+.progress_box {
+  display: flex;
+  flex-direction: column;
+  flex: 0.6;
+  align-items: center;
+  margin-top: 200px;
+}
+
 .card {
   width: 400px;
   background-color: rgb(255, 255, 255);
