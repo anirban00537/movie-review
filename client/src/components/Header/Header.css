@@ -5,12 +5,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #30336b;
+  background-color: #e74c3c;
   height: 60px;
   position: fixed;
   top: 0;
+  left: 0;
+  z-index: 9999;
   width: 100%;
-  overflow: hidden;
 }
 .header__list {
   width: 100%;

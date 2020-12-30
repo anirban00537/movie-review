@@ -4,7 +4,7 @@
   flex: 0.4;
   justify-content: center;
   height: 100%;
-  margin-top: 20px;
+  margin-top: 90px;
   flex-direction: column;
 }
 
@@ -13,13 +13,19 @@
 }
 
 .top_image {
-  width: 90px;
-  height: 140px;
+  width: 40px;
+  height: 60px;
 }
 
 .size {
   margin-top: 20px;
+  display: flex;
+  flex-direction: row;
 }
 .paragraph {
   width: 350px;
+}
+.descriptions_section {
+  align-self: flex-end;
+  margin-left: 10px;
 }

@@ -3,12 +3,15 @@
 }
 .post_card {
   display: flex;
+  border: 1px;
+  border-right-color: black;
 }
 .home_post {
   display: flex;
   flex-direction: column;
   flex: 0.6;
   align-items: center;
+  margin-top: 80px;
 }
 .progress_box {
   display: flex;
