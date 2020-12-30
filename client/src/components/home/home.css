@@ -1,0 +1,56 @@
+.home {
+  display: flex;
+}
+.post_card {
+  display: flex;
+}
+.home_post {
+  display: flex;
+  flex-direction: column;
+  flex: 0.6;
+  align-items: center;
+}
+.card {
+  width: 400px;
+  background-color: rgb(255, 255, 255);
+  margin: 20px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+.card_image {
+  width: 400px;
+}
+.card_user_details {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.username {
+  font-weight: 400;
+  font-size: 14px;
+}
+.username_info {
+  display: flex;
+  margin: 10px;
+  align-items: center;
+}
+.dp_user {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.info_footer_card {
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 7px;
+}
+.info_footer_card_descriptions {
+  font-size: 12px;
+  margin-top: 6px;
+  margin-right: 6px;
+  margin-bottom: 15px;
+  margin-left: 7px;
+}
+.rating_box {
+  margin-bottom: 4px !important;
+}
