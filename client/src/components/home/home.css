@@ -72,3 +72,8 @@
   margin-left: 9px;
   margin-bottom: 6px;
 }
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}

@@ -10,3 +10,7 @@ export const fetchReviews = () => {
 export const createReview = (newReview) => {
   return axios.post(url, newReview);
 };
+
+export const deleteReview = (id) => {
+  return axios.delete(`${url}/${id}`);
+};

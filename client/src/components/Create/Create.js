@@ -1,26 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import Rating from "@material-ui/lab/Rating";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import FileBase from "react-file-base64";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import "./create.css";
 import { createReviewnow } from "../../actions/review";
 
 const Create = () => {
-  const [postData, setPostData] = React.useState({
+  const [postData, setPostData] = useState({
     title: "",
     description: "",
     username: "",
     stars: 0,
     selectedFile: "",
   });
-
   const dispatch = useDispatch();
+
   const handelSubmit = (e) => {
     e.preventDefault();
-
     dispatch(createReviewnow(postData));
+    clear();
+  };
+  const clear = () => {
+    setPostData({
+      title: "",
+      description: "",
+      username: "",
+      stars: 0,
+      selectedFile: "",
+    });
   };
   return (
     <div className="main_card">

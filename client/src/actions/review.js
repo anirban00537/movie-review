@@ -1,9 +1,11 @@
-import { createReview, fetchReviews } from "../api";
+import { createReview, fetchReviews, deleteReview } from "../api";
 
 import {
   CREATE_POST,
   FETCH__POST,
   UPDATE_POST,
+  DELETE_POST,
+  TOTAL_REVIEW_FETCG,
 } from "../constants/actionTypes";
 
 export const getPosts = () => async (dispatch) => {
@@ -31,3 +33,14 @@ export const createReviewnow = (review) => async (dispatch) => {
     console.log(error);
   }
 };
+
+export const deletePost = (id) => async (dispatch) => {
+  try {
+    await deleteReview(id);
+    dispatch({ type: DELETE_POST, payload: id });
+    console.log("deleted");
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+

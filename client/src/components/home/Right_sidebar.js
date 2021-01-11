@@ -1,22 +1,19 @@
 import React from "react";
 import "./right_sidebar.css";
+import StarIcon from "@material-ui/icons/Star";
+
+import { useSelector } from "react-redux";
 const Right_sidebar = () => {
+  const postNumber = useSelector((state) => state.total);
   return (
     <div className="sidebar">
-      <h3 className="headline">Recent Released</h3>
       <div className="size">
-        <div className="image_Section">
-          <img
-            src="https://cdn.pixabay.com/photo/2020/03/01/12/36/fire-4892711_960_720.jpg"
-            className="top_image"
-          />
-        </div>
-
         <div className="descriptions_section">
-          <h4>Solay</h4>
-          <p className="paragraph">
-            ₹350 million (India) 60 million tickets (USSR) Sholay (Hindustani:
-          </p>
+          <h3 className="headline margine10">
+            Total Reviews
+            <StarIcon fontSize="large" />
+          </h3>
+          <h1 className="headline margine10">{postNumber}</h1>
         </div>
       </div>
     </div>

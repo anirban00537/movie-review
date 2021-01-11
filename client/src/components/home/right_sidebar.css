@@ -9,23 +9,10 @@
 }
 
 .headline {
-  color: rgb(97, 96, 96);
+  color: rgb(83, 70, 70);
+  display: inline;
+  font-size: 50px;
 }
-
-.top_image {
-  width: 40px;
-  height: 60px;
-}
-
-.size {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-}
-.paragraph {
-  width: 350px;
-}
-.descriptions_section {
-  align-self: flex-end;
-  margin-left: 10px;
+.margine10 {
+  margin: 10px;
 }

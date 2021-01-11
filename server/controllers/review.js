@@ -17,9 +17,18 @@ export const createReview = async (req, res) => {
     await newReview.save();
     console.log("successfully saved");
     res.status(201).json(newReview);
-    
   } catch (error) {
     console.log("error:", error.message);
     res.status(409).send(error.message);
   }
+};
+
+export const deleteReview = async (req, res) => {
+  const { id } = req.params;
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).send("No Review with that id");
+  }
+  await Review.findByIdAndRemove(id);
+  console.log("DELETED");
+  res.json({ message: "Review deleted successfully" });
 };

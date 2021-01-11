@@ -3,9 +3,14 @@ import Rating from "@material-ui/lab/Rating";
 import Box from "@material-ui/core/Box";
 import "./home.css";
 import moment from "moment";
+import IconButton from "@material-ui/core/IconButton";
+import DeleteIcon from "@material-ui/icons/Delete";
+import { useDispatch } from "react-redux";
+import { deletePost } from "../../actions/review";
 
 const Home_card = ({ review }) => {
-  console.log(review.stars);
+  const dispatch = useDispatch();
+
   return (
     <div className="post_card">
       <div className="card">
@@ -15,6 +20,16 @@ const Home_card = ({ review }) => {
             src="https://cdn.pixabay.com/photo/2016/11/14/04/57/young-1822656_960_720.jpg"
           />
           <p className="username">{review.username}</p>
+          <div className="delete_button">
+            <IconButton
+              aria-label="delete"
+              onClick={() => {
+                dispatch(deletePost(review._id));
+              }}
+            >
+              <DeleteIcon />
+            </IconButton>
+          </div>
         </div>
 
         <img className="card_image" src={review.selectedFile} />
