@@ -23,7 +23,7 @@ function Routers() {
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
-    dispatch(getPosts());
+
     if (user) {
       console.log("there is a user ");
     } else {
@@ -47,7 +47,11 @@ function App() {
   const dispatch = useDispatch();
   const numberOfReview = useSelector((state) => state.review);
   const user = JSON.parse(localStorage.getItem("user"));
-  dispatch(reviewCount(numberOfReview.length));
+  useEffect(() => {
+    dispatch(getPosts());
+    dispatch(reviewCount(numberOfReview.length));
+  }, []);
+
   return (
     <div className="App">
       <Router>

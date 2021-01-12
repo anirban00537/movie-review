@@ -18,9 +18,14 @@ function Login() {
     e.preventDefault();
     const tdata = await axios.post(url, { email: email, password: password });
     const { token, user } = tdata.data;
-    console.log("token" + token + "user" + user.email, +"name" + user.name);
     dispatch(loggingin(token, user.email, user.name));
-    // dispatch(createReviewnow(postData));
+    localStorage.setItem("jwt", token);
+    localStorage.setItem("user", JSON.stringify(user));
+    M.toast({
+      html: "signedin successfully",
+      classes: "#43a047 green darken-1",
+    });
+    history.push("/");
   };
 
   return (
