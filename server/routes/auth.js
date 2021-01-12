@@ -1,14 +1,13 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const { JWT_SECRET } = require("../keys");
-
+import express from "express";
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+import { JWT_SECRET } from "../keys.js";
+import User from "../models/user.js";
 //app config
 const router = express.Router();
-const User = mongoose.model("User");
+// const User = mongoose.model("User");
 //middleware
-const requireLogin = require("../middleware/requireLogin");
+import requireLogin from "../middleware/requireMiddleware.js";
 
 //signup route
 router.post("/signup", (req, res) => {
@@ -58,6 +57,7 @@ router.post("/signup", (req, res) => {
 router.post("/signin", (req, res) => {
   // destructuring email and password from user for further varification
   const { email, password } = req.body;
+  console.log(email, password);
 
   //varifying is there any input or not
   if (!email || !password) {
@@ -91,4 +91,4 @@ router.post("/signin", (req, res) => {
       });
   });
 });
-module.exports = router;
+export default router;
