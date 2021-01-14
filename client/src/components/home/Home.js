@@ -1,10 +1,12 @@
-import React from "react";
+import { useEffect } from "react";
 import Home_card from "./Home_card";
 import Right_sidebar from "./Right_sidebar";
 import { CircularProgress } from "@material-ui/core";
-import LinearProgress from "@material-ui/core/LinearProgress";
+import { useDispatch, useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
-import { useSelector } from "react-redux";
+import { getPosts } from "../../actions/review";
+import { reviewCount } from "../../actions/total";
+import Header from "../Header/Header";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,11 +18,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 const Home = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getPosts());
+  }, [dispatch]);
+
   const reviews = useSelector((state) => state.review);
-  console.log(reviews);
 
   return !reviews.length ? (
     <div className="home">
+      <Header />
       <div className="progress_box">
         <CircularProgress className="progress" />
       </div>
@@ -29,6 +37,7 @@ const Home = () => {
     </div>
   ) : (
     <div className="home">
+      <Header />
       <div className="home_post">
         {reviews.map((review) => (
           <Home_card key={review._id} review={review} />

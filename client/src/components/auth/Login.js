@@ -18,7 +18,7 @@ function Login() {
     e.preventDefault();
     const tdata = await axios.post(url, { email: email, password: password });
     const { token, user } = tdata.data;
-    dispatch(loggingin(token, user.email, user.name));
+    dispatch(loggingin(user.email, token, user.name));
     localStorage.setItem("jwt", token);
     localStorage.setItem("user", JSON.stringify(user));
     M.toast({

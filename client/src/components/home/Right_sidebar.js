@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./right_sidebar.css";
 import StarIcon from "@material-ui/icons/Star";
+import { useSelector, useDispatch } from "react-redux";
+import { getPosts } from "../../actions/review";
 
-import { useSelector } from "react-redux";
 const Right_sidebar = () => {
-  const postNumber = useSelector((state) => state.total);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getPosts());
+  }, [dispatch]);
+
+  const reviews = useSelector((state) => state.review);
   return (
     <div className="sidebar">
       <div className="size">
@@ -13,7 +20,7 @@ const Right_sidebar = () => {
             Total Reviews
             <StarIcon fontSize="large" />
           </h3>
-          <h1 className="headline margine10">{postNumber}</h1>
+          <h1 className="headline margine10">{reviews.length}</h1>
         </div>
       </div>
     </div>

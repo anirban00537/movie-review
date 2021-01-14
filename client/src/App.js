@@ -10,15 +10,11 @@ import {
 import Home from "./components/home/Home";
 import Create from "./components/Create/Create";
 import Profile from "./components/Profile/Profile";
-import { getPosts } from "./actions/review";
 import { useDispatch, useSelector } from "react-redux";
-import { reviewCount } from "./actions/total";
 import Login from "./components/auth/Login";
 import Signup from "./components/auth/Signup";
 
 function Routers() {
-  const dispatch = useDispatch();
-
   const history = useHistory();
 
   useEffect(() => {
@@ -44,18 +40,14 @@ function Routers() {
 }
 
 function App() {
-  const dispatch = useDispatch();
-  const numberOfReview = useSelector((state) => state.review);
-  const user = JSON.parse(localStorage.getItem("user"));
-  useEffect(() => {
-    dispatch(getPosts());
-    dispatch(reviewCount(numberOfReview.length));
-  }, []);
+  // const userLocal = JSON.parse(localStorage.getItem("user"));
+  const user = useSelector((state) => state.user);
 
+  console.log(user, "user from app.js");
   return (
     <div className="App">
       <Router>
-        {user ? <Header /> : null}
+        {/* {user.token ? <Header /> : null} */}
 
         <Routers />
       </Router>
