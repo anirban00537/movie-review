@@ -18,9 +18,10 @@ function Login() {
     e.preventDefault();
     const tdata = await axios.post(url, { email: email, password: password });
     const { token, user } = tdata.data;
-    dispatch(loggingin(user.email, token, user.name));
+
     localStorage.setItem("jwt", token);
     localStorage.setItem("user", JSON.stringify(user));
+    dispatch(loggingin(user.email, token, user.name));
     M.toast({
       html: "signedin successfully",
       classes: "#43a047 green darken-1",

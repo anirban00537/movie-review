@@ -16,26 +16,33 @@ import Signup from "./components/auth/Signup";
 
 function Routers() {
   const history = useHistory();
+  let signHeader;
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
-
     if (user) {
       console.log("there is a user ");
+      signHeader = true;
     } else {
       console.log("there is no user ");
       history.push("/login");
+      signHeader = false;
+      console.log(signHeader);
     }
   }, []);
 
   return (
-    <Switch>
-      <Route path="/" exact component={Home} />
-      <Route path="/create" component={Create} />
-      <Route path="/profile" component={Profile} />
-      <Route path="/login" component={Login} />
-      <Route path="/signup" component={Signup} />
-    </Switch>
+    <>
+      {signHeader == true ? <Header /> : ""}
+
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/create" component={Create} />
+        <Route path="/profile" component={Profile} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
+      </Switch>
+    </>
   );
 }
 
@@ -47,7 +54,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        {/* {user.token ? <Header /> : null} */}
+        {user.token ? <Header /> : null}
 
         <Routers />
       </Router>

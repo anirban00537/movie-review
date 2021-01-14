@@ -28,7 +28,7 @@ const Home = () => {
 
   return !reviews.length ? (
     <div className="home">
-      <Header />
+      {/* <Header /> */}
       <div className="progress_box">
         <CircularProgress className="progress" />
       </div>
@@ -37,7 +37,7 @@ const Home = () => {
     </div>
   ) : (
     <div className="home">
-      <Header />
+      {/* <Header /> */}
       <div className="home_post">
         {reviews.map((review) => (
           <Home_card key={review._id} review={review} />
