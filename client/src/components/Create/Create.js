@@ -3,11 +3,12 @@ import Rating from "@material-ui/lab/Rating";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import FileBase from "react-file-base64";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./create.css";
 import { createReviewnow } from "../../actions/review";
 
 const Create = () => {
+  const user = useSelector((state) => {});
   const [postData, setPostData] = useState({
     title: "",
     description: "",

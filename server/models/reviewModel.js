@@ -23,6 +23,11 @@ const reviewSchema = mongoose.Schema({
     type: Date,
     default: new Date(),
   },
+  // user: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   required: true,
+  //   ref: "user",
+  // },
 });
 
 const Review = mongoose.model("Review", reviewSchema);

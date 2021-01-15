@@ -5,8 +5,6 @@ import { CircularProgress } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import { getPosts } from "../../actions/review";
-import { reviewCount } from "../../actions/total";
-import Header from "../Header/Header";
 
 const useStyles = makeStyles((theme) => ({
   root: {
