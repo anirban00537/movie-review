@@ -17,6 +17,7 @@ export const fetchReviews = () => {
 };
 
 export const createReview = (newReview) => {
+  console.log("donenenene");
   return axios.post(url, newReview);
 };
 

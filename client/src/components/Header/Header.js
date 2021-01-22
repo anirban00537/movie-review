@@ -5,8 +5,12 @@ import AddIcon from "@material-ui/icons/Add";
 import PersonIcon from "@material-ui/icons/Person";
 import LocalMoviesIcon from "@material-ui/icons/LocalMovies";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
 const Header = () => {
-  return (
+  const u = useSelector((state) => state.user);
+
+  return u.name ? (
     <div className="header">
       <div className="icon">
         <LocalMoviesIcon />
@@ -23,10 +27,12 @@ const Header = () => {
         </Link>
         <Link to="/profile" className="header__item">
           <PersonIcon />
-          <p>Profile</p>
+          <p>{u.name}</p>
         </Link>
       </div>
     </div>
+  ) : (
+    ""
   );
 };
 

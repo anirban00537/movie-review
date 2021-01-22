@@ -7,6 +7,7 @@ import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { useDispatch } from "react-redux";
 import { deletePost } from "../../actions/review";
+import "./home_card.css";
 
 const Home_card = ({ review }) => {
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ const Home_card = ({ review }) => {
                 dispatch(deletePost(review._id));
               }}
             >
-              <DeleteIcon />
+              <DeleteIcon className="deleteIcon" />
             </IconButton>
           </div>
         </div>
