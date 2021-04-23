@@ -27,15 +27,13 @@ function Routers() {
   }, []);
 
   return (
-    <>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/create" component={Create} />
-        <Route path="/profile" component={Profile} />
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
-      </Switch>
-    </>
+    <Switch>
+      <Route path="/" exact component={Home} />
+      <Route path="/create" component={Create} />
+      <Route path="/profile" component={Profile} />
+      <Route path="/login" component={Login} />
+      <Route path="/signup" component={Signup} />
+    </Switch>
   );
 }
 
